@@ -8,7 +8,9 @@
 
 <br><br>
 
-[![Live Demo](https://img.shields.io/badge/Live-Portfolio-7DF9FF?style=for-the-badge&logo=vercel&logoColor=black)](https://portfolio-eta-eight-gz606x2qs7.vercel.app/)
+<a href="https://portfolio-eta-eight-gz606x2qs7.vercel.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Live-Portfolio-7DF9FF?style=for-the-badge&logo=vercel&logoColor=black" />
+</a>
 
 </div>
 
