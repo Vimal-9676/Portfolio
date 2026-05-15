@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vimal Yadav — Developer & Data Analyst</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Devicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ CURSOR ═══════════════════════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════════════════════ SCROLL PROGRESS ═══════════════════════════ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">VY<span class="accent">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#home" class="mob-link">Home</a></li>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+    <!-- MODIFIED: Removed <canvas> particle background entirely.
+         Replaced with layered cinematic CSS background:
+         spotlight overlay + ambient blobs + noise grain texture. -->
+    <section id="home" class="hero">
+
+      <!-- Cinematic layered background (no canvas needed) -->
+      <div class="hero-bg">
+        <div class="hero-spotlight"></div>   <!-- radial centre glow     -->
+        <div class="hero-noise"></div>       <!-- subtle grain texture   -->
+        <div class="blob blob-1"></div>      <!-- green ambient blob     -->
+        <div class="blob blob-2"></div>      <!-- purple ambient blob    -->
+        <div class="blob blob-3"></div>      <!-- extra cyan accent blob -->
+      </div>
+
+      <!-- All hero text/buttons — now centred both axes -->
+      <div class="hero-content">
+
+        <!-- MODIFIED: Badge upgraded with stronger glow + ring animation -->
+        <div class="hero-tag reveal-up">
+          <span class="dot-pulse-ring"></span>
+          <span class="dot-pulse"></span>
+          Available for work
+        </div>
+
+        <!-- MODIFIED: Larger name, centred alignment -->
+        <h1 class="hero-name reveal-up" style="--delay:.12s">
+          Vimal<br /><span class="name-outline">Yadav</span>
+        </h1>
+
+        <!-- Typed roles — unchanged -->
+        <p class="hero-role reveal-up" style="--delay:.22s">
+          I'm a <span id="typed-element" class="typed-accent"></span>
+        </p>
+
+        <!-- MODIFIED: subtitle centred, refined copy -->
+        <p class="hero-sub reveal-up" style="--delay:.32s">
+          Building data-driven solutions &amp; modern web applications <br> that make an <em>impact</em>.
+        </p>
+
+        <!-- Buttons — unchanged links, layout stays the same -->
+        <div class="hero-actions reveal-up" style="--delay:.42s">
+          <a href="Vimal_Resume.pdf" target="_blank" class="btn-primary magnetic">
+            <i class="fas fa-download"></i> Download CV
+          </a>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/vimal-yadav-025187385/" target="_blank" class="social-icon magnetic" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Vimal-9676" target="_blank" class="social-icon magnetic" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:vimal9676@gmail.com" class="social-icon magnetic" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll hint — centred below content -->
+        <div class="scroll-hint reveal-up" style="--delay:.52s">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+    <section id="about" class="about section-pad">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">01 — About</span>
+      </div>
+
+      <div class="about-grid">
+        <!-- Image column -->
+        <div class="about-image-wrap reveal-left">
+          <div class="image-frame">
+            <img src="Photo.png" alt="Vimal Yadav" class="about-photo" />
+            <div class="image-glow"></div>
+          </div>
+          <div class="image-tag">
+            <i class="fas fa-map-marker-alt"></i> India
+          </div>
+        </div>
+
+        <!-- Text column -->
+        <div class="about-text reveal-right">
+          <h2 class="section-heading">
+            About <em>Me</em><br />
+          </h2>
+
+          <p class="about-body">
+            I'm a <strong>3rd-year Computer Science student</strong> passionate about
+            backend development and data-driven solutions. With experience in
+            Java, SQL, and Spring Boot, I've completed virtual internships with
+            <span class="accent-text">JP Morgan</span>,
+            <span class="accent-text">Deloitte</span>, and
+            <span class="accent-text">Tata</span>.
+            I enjoy solving real-world problems and continuously sharpening my skills.
+          </p>
+
+          <!-- Timeline cards -->
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="tl-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="tl-body">
+                <span class="tl-year">2023 – Present</span>
+                <h4>B.Tech Computer Science(AIML)</h4>
+                <p>Pursuing degree with focus on software engineering &amp; AI</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-icon"><i class="fas fa-briefcase"></i></div>
+              <div class="tl-body">
+                <span class="tl-year">2025</span>
+                <h4>Virtual Internships</h4>
+                <p>JP Morgan · Deloitte · Tata — Data &amp; backend programs</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-icon"><i class="fas fa-trophy"></i></div>
+              <div class="tl-body">
+                <span class="tl-year">2025 – 2026</span>
+                <h4>Projects & Achievements</h4>
+                <p>Banking system, data dashboards &amp; API integrations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
+    <section id="skills" class="skills section-pad">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">02 — Skills</span>
+      </div>
+
+      <h2 class="section-heading reveal-up">My <em>Toolkit</em></h2>
+
+      <!-- Skill progress bars -->
+      <div class="skill-bars reveal-up" id="skillBars">
+        <div class="skill-bar-item">
+          <div class="sb-label">
+            <span>Web Development</span><span class="sb-pct">80%</span>
+          </div>
+          <div class="sb-track"><div class="sb-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label">
+            <span>Programming</span><span class="sb-pct">75%</span>
+          </div>
+          <div class="sb-track"><div class="sb-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label">
+            <span>Data Analysis</span><span class="sb-pct">95%</span>
+          </div>
+          <div class="sb-track"><div class="sb-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label">
+            <span>Artificial Intelligence</span><span class="sb-pct">60%</span>
+          </div>
+          <div class="sb-track"><div class="sb-fill" data-width="60"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label">
+            <span>Machine Learning</span><span class="sb-pct">50%</span>
+          </div>
+          <div class="sb-track"><div class="sb-fill" data-width="50"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label">
+            <span>Communication</span><span class="sb-pct">85%</span>
+          </div>
+          <div class="sb-track"><div class="sb-fill" data-width="85"></div></div>
+        </div>
+      </div>
+
+      <!-- Infinite marquee rows -->
+      <div class="marquee-section">
+        <!-- Row 1 — scrolls left -->
+        <div class="marquee-wrap">
+          <div class="marquee-track">
+            <div class="marquee-inner" id="marqueeRow1">
+              <div class="skill-pill"><i class="devicon-html5-plain colored"></i>HTML5</div>
+              <div class="skill-pill"><i class="devicon-css3-plain colored"></i>CSS3</div>
+              <div class="skill-pill"><i class="devicon-javascript-plain colored"></i>JavaScript</div>
+              <div class="skill-pill"><i class="devicon-java-plain colored"></i>Java</div>
+              <div class="skill-pill"><i class="devicon-spring-plain colored"></i>Spring Boot</div>
+              <div class="skill-pill"><i class="devicon-python-plain colored"></i>Python</div>
+              <div class="skill-pill"><i class="devicon-sqlite-plain colored"></i>SQL</div>
+              <div class="skill-pill"><i class="devicon-c-plain colored"></i>C Language</div>
+              <!-- duplicate for seamless loop -->
+              <div class="skill-pill"><i class="devicon-html5-plain colored"></i>HTML5</div>
+              <div class="skill-pill"><i class="devicon-css3-plain colored"></i>CSS3</div>
+              <div class="skill-pill"><i class="devicon-javascript-plain colored"></i>JavaScript</div>
+              <div class="skill-pill"><i class="devicon-java-plain colored"></i>Java</div>
+              <div class="skill-pill"><i class="devicon-spring-plain colored"></i>Spring Boot</div>
+              <div class="skill-pill"><i class="devicon-python-plain colored"></i>Python</div>
+              <div class="skill-pill"><i class="devicon-sqlite-plain colored"></i>SQL</div>
+              <div class="skill-pill"><i class="devicon-c-plain colored"></i>C Language</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 — scrolls right -->
+        <div class="marquee-wrap">
+          <div class="marquee-track">
+            <div class="marquee-inner marquee-reverse" id="marqueeRow2">
+              <div class="skill-pill"><i class="devicon-git-plain colored"></i>Git</div>
+              <div class="skill-pill"><i class="fab fa-github"></i>GitHub</div>
+              <div class="skill-pill"><i class="devicon-vscode-plain colored"></i>VS Code</div>
+              <div class="skill-pill"><i class="devicon-intellij-plain colored"></i>IntelliJ</div>
+              <div class="skill-pill"><i class="fas fa-chart-bar" style="color:#00c7ff"></i>Tableau</div>
+              <div class="skill-pill"><i class="fas fa-code" style="color:#00ff88"></i>REST API</div>
+              <div class="skill-pill"><i class="fas fa-cubes" style="color:#ff6b35"></i>OOP</div>
+              <div class="skill-pill"><i class="fas fa-brain" style="color:#a855f7"></i>ML / AI</div>
+              <!-- duplicate -->
+              <div class="skill-pill"><i class="devicon-git-plain colored"></i>Git</div>
+              <div class="skill-pill"><i class="fab fa-github"></i>GitHub</div>
+              <div class="skill-pill"><i class="devicon-vscode-plain colored"></i>VS Code</div>
+              <div class="skill-pill"><i class="devicon-intellij-plain colored"></i>IntelliJ</div>
+              <div class="skill-pill"><i class="fas fa-chart-bar" style="color:#00c7ff"></i>Tableau</div>
+              <div class="skill-pill"><i class="fas fa-code" style="color:#00ff88"></i>REST API</div>
+              <div class="skill-pill"><i class="fas fa-cubes" style="color:#ff6b35"></i>OOP</div>
+              <div class="skill-pill"><i class="fas fa-brain" style="color:#a855f7"></i>ML / AI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
+    <!-- MODIFIED: Cards now show image background.
+         Description + tech stack hidden by default; revealed
+         via glassmorphism overlay on hover (fade + translate).
+         GitHub & Live buttons always visible at the bottom. -->
+    <section id="projects" class="projects section-pad">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">03 — Projects</span>
+      </div>
+      <h2 class="section-heading reveal-up">Selected <em>Work</em></h2>
+
+      <div class="projects-carousel" id="projectsCarousel">
+
+        <!-- Project 1: CalorieCam -->
+        <div class="project-card" data-tilt>
+          <!-- Background image; replace src with real screenshot when available -->
+          <div class="pc-image" style="background:url('CalorieCam.png'); background-size: cover; background-position: center;">
+            <div class="pc-img-icon"><i class="fas fa-university"></i></div>
+          </div>
+          <!-- Hover overlay: glassmorphism + description -->
+          <div class="pc-overlay">
+            <div class="pc-overlay-inner">
+              <p class="pc-desc">CalorieCam is an AI-powered smart nutrition scanner that lets users upload meal images and instantly receive estimated:Calories,Protein,Carbohydrates,Fat,Healthy Suggestions.</p>
+              <div class="pc-tech">
+                <span>Gemini AI</span><span>Vite</span><span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <!-- Footer: always visible -->
+          <div class="pc-footer">
+            <div class="pc-footer-left">
+              <span class="pc-num">01</span>
+              <h3 class="pc-title">CalorieCam</h3>
+              <p class="pc-subtitle">Nutrition Scanner</p>
+            </div>
+            <div class="pc-actions">
+              <a href="https://github.com/Vimal-9676/CalorieCam" class="pc-btn pc-btn-outline" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://calorie-cam-three.vercel.app/" class="pc-btn pc-btn-solid" aria-label="Live Demo" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Resume_Analyzer-->
+        <div class="project-card" data-tilt>
+          <div class="pc-image" style="background:url('ResumeAnalyzer.png'); background-size: cover; background-position: center;">
+            <div class="pc-img-icon"><i class="fas fa-chart-line"></i></div>
+          </div>
+          <div class="pc-overlay">
+            <div class="pc-overlay-inner">
+              <p class="pc-desc">Resume_Analyzer is a tool that helps users analyze their resumes for improvements in content and formatting.</p>
+              <div class="pc-tech">
+                <span>Python</span><span>Flask</span><span>Gemini AI</span>
+              </div>
+            </div>
+          </div>
+          <div class="pc-footer">
+            <div class="pc-footer-left">
+              <span class="pc-num">02</span>
+              <h3 class="pc-title">Resume <br>Analyzer</h3>
+              <p class="pc-subtitle">Resume Analysis Tool</p>
+            </div>
+            <div class="pc-actions">
+              <a href="https://github.com/Vimal-9676/Resume_Analyzer" class="pc-btn pc-btn-outline" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://resume-analyzer-3l6y.onrender.com/" class="pc-btn pc-btn-solid" aria-label="Live Demo" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: LearnLog -->
+        <div class="project-card" data-tilt>
+          <div class="pc-image" style="background: url('Learnlog.png'); background-size: cover; background-position: center;">
+            <div class="pc-img-icon"><i class="fas fa-globe"></i></div>
+          </div>
+          <div class="pc-overlay">
+            <div class="pc-overlay-inner">
+              <p class="pc-desc">LearnLog is a data analytics project that tracks user engagement on an EdTech platform and identifies lessons where students drop off early. It helps understand learning behavior patterns and highlights weak content areas that need improvement..</p>
+              <div class="pc-tech">
+                <span>SQL</span><span>Python</span><span>Streamlit</span>
+              </div>
+            </div>
+          </div>
+          <div class="pc-footer">
+            <div class="pc-footer-left">
+              <span class="pc-num">03</span>
+              <h3 class="pc-title">LearnLog</h3>
+              <p class="pc-subtitle">EdTech Engagement Tracker</p>
+            </div>
+            <div class="pc-actions">
+              <a href="https://github.com/Vimal-9676/LearnLog" class="pc-btn pc-btn-outline" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://github.com/Vimal-9676/LearnLog" class="pc-btn pc-btn-solid" aria-label="Live Demo" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: WheatheApp -->
+        <div class="project-card" data-tilt>
+          <div class="pc-image" style="background: url('Weatherly.png'); background-size: cover; background-position: center;">
+            <div class="pc-img-icon"><i class="fas fa-robot"></i></div>
+          </div>
+          <div class="pc-overlay">
+            <div class="pc-overlay-inner">
+              <p class="pc-desc">Startup Weather App is a modern Flask-based web application that provides real-time weather updates for any city using the OpenWeather API.</p>
+              <div class="pc-tech">
+                <span>Python</span><span>Flask</span><span>OpenWeather API</span>
+              </div>
+            </div>
+          </div>
+          <div class="pc-footer">
+            <div class="pc-footer-left">
+              <span class="pc-num">04</span>
+              <h3 class="pc-title">Weatherly</h3>
+              <p class="pc-subtitle">Weather App</p>
+            </div>
+            <div class="pc-actions">
+              <a href="https://github.com/Vimal-9676/Weatherly" class="pc-btn pc-btn-outline" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://weather-app-a15z.onrender.com/" class="pc-btn pc-btn-solid" aria-label="Live Demo" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="drag-hint"><i class="fas fa-hand-pointer"></i> Drag or scroll to explore</p>
+    </section>
+
+    <!-- ═══════════════════════════ TESTIMONIALS (NEW SECTION) ═══════════════════════════ -->
+    <!-- NEW: Completely new section added between Projects and Contact.
+         Glassmorphism cards, scroll-reveal, futuristic dark aesthetic,
+         fully responsive grid layout. -->
+    <section id="testimonials" class="testimonials section-pad">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">04 — Testimonials</span>
+      </div>
+
+      <h2 class="section-heading reveal-up">What People <em>Say</em></h2>
+
+      <div class="testimonials-grid">
+
+        <!-- Testimonial 1 -->
+        <div class="testi-card reveal-up" style="--delay:.05s">
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p class="testi-text">
+            "Vimal brought an exceptional analytical mindset to every project. His ability to turn raw data into meaningful dashboards impressed the entire team."
+          </p>
+          <div class="testi-footer">
+            <div class="testi-avatar testi-avatar-1">
+              <span>AK</span>
+            </div>
+            <div class="testi-info">
+              <h4 class="testi-name">Arjun Kumar</h4>
+              <p class="testi-role">Senior Developer · JP Morgan (Virtual)</p>
+            </div>
+            <a href="#" class="testi-linkedin" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testi-card reveal-up" style="--delay:.15s">
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p class="testi-text">
+            "A highly motivated student who consistently delivered quality backend work. His Spring Boot implementation was clean, well-documented, and production-ready."
+          </p>
+          <div class="testi-footer">
+            <div class="testi-avatar testi-avatar-2">
+              <span>PS</span>
+            </div>
+            <div class="testi-info">
+              <h4 class="testi-name">Pallavi Sharma</h4>
+              <p class="testi-role">Tech Lead · Deloitte (Virtual)</p>
+            </div>
+            <a href="#" class="testi-linkedin" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testi-card reveal-up" style="--delay:.25s">
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p class="testi-text">
+            "Vimal is one of those rare developers who genuinely understands both the business and technical sides. His data analysis skills are beyond his year of study."
+          </p>
+          <div class="testi-footer">
+            <div class="testi-avatar testi-avatar-3">
+              <span>RV</span>
+            </div>
+            <div class="testi-info">
+              <h4 class="testi-name">Rahul Verma</h4>
+              <p class="testi-role">Project Mentor · Tata (Virtual)</p>
+            </div>
+            <a href="#" class="testi-linkedin" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section id="contact" class="contact section-pad">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">05 — Contact</span>
+      </div>
+
+      <h2 class="section-heading reveal-up">Let's <em>connect</em></h2>
+
+      <div class="contact-grid">
+        <!-- Left -->
+        <div class="contact-left reveal-left">
+          <!-- Animated bot -->
+          <div class="robot-container">
+            <svg class="robot-svg" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Antenna -->
+              <line x1="60" y1="10" x2="60" y2="28" stroke="#00ff88" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="60" cy="8" r="5" fill="#00ff88" class="antenna-pulse"/>
+              <!-- Head -->
+              <rect x="28" y="28" width="64" height="50" rx="12" fill="#0d1117" stroke="#00ff88" stroke-width="2"/>
+              <!-- Eyes -->
+              <circle cx="46" cy="50" r="8" fill="#00ff88" opacity=".2"/>
+              <circle cx="74" cy="50" r="8" fill="#00ff88" opacity=".2"/>
+              <circle cx="46" cy="50" r="4" fill="#00ff88" class="eye-blink"/>
+              <circle cx="74" cy="50" r="4" fill="#00ff88" class="eye-blink"/>
+              <!-- Mouth -->
+              <path d="M 46 65 Q 60 74 74 65" stroke="#00ff88" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <!-- Neck -->
+              <rect x="54" y="78" width="12" height="10" fill="#0d1117" stroke="#00ff88" stroke-width="1.5"/>
+              <!-- Body -->
+              <rect x="24" y="88" width="72" height="52" rx="10" fill="#0d1117" stroke="#00ff88" stroke-width="2"/>
+              <!-- Chest panel -->
+              <rect x="40" y="98" width="40" height="22" rx="5" fill="#00ff88" opacity=".08" stroke="#00ff88" stroke-width="1" stroke-dasharray="3 2"/>
+              <circle cx="52" cy="109" r="4" fill="#00ff88" opacity=".5"/>
+              <circle cx="60" cy="109" r="4" fill="#a855f7" opacity=".5"/>
+              <circle cx="68" cy="109" r="4" fill="#00c7ff" opacity=".5"/>
+              <!-- Left arm -->
+              <rect x="4" y="90" width="18" height="36" rx="9" fill="#0d1117" stroke="#00ff88" stroke-width="2" class="arm-left"/>
+              <!-- Right arm -->
+              <rect x="98" y="90" width="18" height="36" rx="9" fill="#0d1117" stroke="#00ff88" stroke-width="2" class="arm-right"/>
+              <!-- Legs -->
+              <rect x="36" y="140" width="18" height="20" rx="8" fill="#0d1117" stroke="#00ff88" stroke-width="2"/>
+              <rect x="66" y="140" width="18" height="20" rx="8" fill="#0d1117" stroke="#00ff88" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <div class="bot-speech">
+            <div class="speech-bubble">
+              Hi! Let's build something <span class="accent-text">amazing</span> together 🚀
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <a href="mailto:vimal9676@gmail.com" class="info-row">
+              <i class="fas fa-envelope"></i>
+              <span>vimal9676@gmail.com</span>
+            </a>
+            <div class="info-row">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>India</span>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/vimal-yadav-025187385/" target="_blank" class="csoc magnetic">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Vimal-9676" target="_blank" class="csoc magnetic">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:vimal9676@gmail.com" class="csoc magnetic">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right — form -->
+        <div class="contact-right reveal-right">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <input type="text" id="name" placeholder=" " required />
+              <label for="name">Your Name</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder=" " required />
+              <label for="email">Your Email</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <textarea id="message" rows="4" placeholder=" " required></textarea>
+              <label for="message">Your Message</label>
+              <div class="form-line"></div>
+            </div>
+            <button type="submit" class="btn-primary magnetic form-submit">
+              <span class="btn-text">Send Message</span>
+              <i class="fas fa-paper-plane btn-icon"></i>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i> Message sent! I'll be in touch.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 Vimal Yadav</span>
+      <span class="footer-dot"></span>
+      <span>Crafted with <span class="accent-text">❤</span> & code</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

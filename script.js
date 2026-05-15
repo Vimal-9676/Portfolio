@@ -253,29 +253,29 @@ const typed = new Typed("#typed-element", {
   bars.forEach((b) => obs.observe(b));
 })();
 
-/* ─── Drag-Scroll Projects Carousel ─────────────── */
-(function initDragScroll() {
+/* ─── Swiper Projects Carousel ────────────────────── */
+(function initSwiper() {
   const carousel = document.getElementById("projectsCarousel");
   if (!carousel) return;
 
-  let isDown   = false;
-  let startX   = 0;
-  let scrollL  = 0;
-
-  carousel.addEventListener("mousedown", (e) => {
-    isDown  = true;
-    startX  = e.pageX - carousel.offsetLeft;
-    scrollL = carousel.scrollLeft;
-    carousel.classList.add("active");
-  });
-  carousel.addEventListener("mouseleave", () => { isDown = false; });
-  carousel.addEventListener("mouseup",    () => { isDown = false; });
-  carousel.addEventListener("mousemove",  (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x    = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX) * 1.6;
-    carousel.scrollLeft = scrollL - walk;
+  const swiper = new Swiper('.projects-swiper', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    initialSlide: 1, // Start on the second slide (Resume Analyzer)
+    speed: 800,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 250,
+      modifier: 1.5,
+      slideShadows: false,
+    },
+    navigation: {
+      nextEl: '.swiper-btn-next',
+      prevEl: '.swiper-btn-prev',
+    }
   });
 })();
 
@@ -317,8 +317,13 @@ const typed = new Typed("#typed-element", {
 
 /* ─── Contact Form ──────────────────────────────── */
 (function initContactForm() {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init("QD4CF2OF_hzUXkBsM");
+  }
+
   const form    = document.getElementById("contactForm");
   const success = document.getElementById("formSuccess");
+  const errorMsg = document.getElementById("formError");
   if (!form) return;
 
   form.addEventListener("submit", (e) => {
@@ -327,18 +332,37 @@ const typed = new Typed("#typed-element", {
     btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending…';
     btn.disabled  = true;
 
-    // Simulate send (replace with real endpoint if needed)
-    setTimeout(() => {
-      form.reset();
-      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    if (success) success.style.display = "none";
+    if (errorMsg) errorMsg.style.display = "none";
+
+    if (typeof emailjs !== 'undefined') {
+      emailjs.sendForm('service_5yrvd5f', 'template_zrgqqqt', form)
+        .then(() => {
+          form.reset();
+          btn.innerHTML = '<span class="btn-text">Send Message</span><i class="fas fa-paper-plane btn-icon"></i>';
+          btn.disabled  = false;
+          if (success) {
+            success.style.display = "flex";
+            success.style.alignItems = "center";
+            success.style.gap = ".5rem";
+            setTimeout(() => { success.style.display = "none"; }, 5000);
+          }
+        }, (error) => {
+          console.error("EmailJS Error:", error);
+          btn.innerHTML = '<span class="btn-text">Send Message</span><i class="fas fa-paper-plane btn-icon"></i>';
+          btn.disabled  = false;
+          if (errorMsg) {
+            errorMsg.style.display = "flex";
+            errorMsg.style.alignItems = "center";
+            errorMsg.style.gap = ".5rem";
+            setTimeout(() => { errorMsg.style.display = "none"; }, 5000);
+          }
+        });
+    } else {
+      console.error("EmailJS SDK not loaded.");
+      btn.innerHTML = '<span class="btn-text">Send Message</span><i class="fas fa-paper-plane btn-icon"></i>';
       btn.disabled  = false;
-      if (success) {
-        success.style.display = "flex";
-        success.style.alignItems = "center";
-        success.style.gap = ".5rem";
-        setTimeout(() => { success.style.display = "none"; }, 4000);
-      }
-    }, 1500);
+    }
   });
 })();
 
